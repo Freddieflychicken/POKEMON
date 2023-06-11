@@ -1,0 +1,221 @@
+{% extends "navbar.html" %} {% block content %}
+<h1>Pokemon database!</h1>
+<div class="querybox">
+  <a href="/poke/{{randomNumber}}">
+    <input type="submit" id="button" value="Random" />
+  </a>
+</div>
+<form action="" method="post" class="queryform">
+  <div class="querybox">
+  <input maxlength=100 type="number" id="form" name="Pokemon_name" placeholder="Pokemon ID" \ />
+  <input type="submit" name="Pokemon_name" id="button" value="Go"/>
+    
+  </div>
+  <div class="querybox">
+    <label class="radio" 
+      >Grass
+      <input
+        type="radio"
+        checked="checked"
+        name="radioname"
+        id="Male"
+        value="Grass"
+      />
+    </label>
+    <label class="radio"
+    >Poison
+    <input
+      type="radio"
+      name="radioname"
+      id="Male"
+      value="Poison"
+     />
+    </label>
+    <label class="radio"
+      >Water
+      <input
+      type="radio"
+      name="radioname"
+      id="Male"
+      value="Water"
+     />
+    </label>
+    <label class="radio"
+      >Fire
+      <input
+      type="radio"
+      name="radioname"
+      id="Male"
+      value="Fire"
+     />
+    </label>
+    <label class="radio"
+      >Flying
+      <input
+      type="radio"
+      name="radioname"
+      id="Male"
+      value="Flying"
+     />
+    </label>
+    <label class="radio"
+      >Bug
+      <input
+      type="radio"
+      name="radioname"
+      id="Male"
+      value="Bug"
+     />
+    </label>
+  </div>
+  <div class="querybox">
+    <label class="radio"
+      >Normal
+      <input
+        type="radio"
+        checked="checked"
+        name="radioname"
+        id="Human"
+        value="Normal"
+      />
+    </label>
+    <label class="radio"
+      >Electric
+      <input
+        type="radio"
+        name="radioname"
+        id="Human"
+        value="Electric"
+      />
+    </label>
+    <label class="radio"
+      >Ground
+      <input
+        type="radio"
+        name="radioname"
+        id="Human"
+        value="Ground"
+      />
+    </label>
+    <label class="radio"
+      >Fairy
+      <input
+        type="radio"
+        name="radioname"
+        id="Human"
+        value="Fairy"
+      />
+    </label>
+    <label class="radio"
+      >Fighting
+      <input
+        type="radio"
+        name="radioname"
+        id="Human"
+        value="Fighting"
+      />
+    </label>
+    <label class="radio"
+      >Psychic
+      <input
+        type="radio"
+        name="radioname"
+        id="Human"
+        value="Psychic"
+      />
+    </label>
+  </div>
+  <div class="querybox">
+    <label class="radio"
+      >Dark
+      <input
+        type="radio"
+        checked="checked"
+        name="radioname"
+        id="Dark"
+        value="Dark"
+      />
+    </label>
+    <label class="radio"
+      >Rock
+      <input
+      type="radio"
+      name="radioname"
+      id="Dark"
+      value="Rock"
+    />
+    </label>
+    <label class="radio"
+      >Steel
+      <input
+        type="radio"
+        name="radioname"
+        id="Dark"
+        value="Steel"
+      />
+    </label>
+    <label class="radio"
+      >Ice
+      <input
+        type="radio"
+        name="radioname"
+        id="Dark"
+        value="Ice"
+      />
+    </label>
+    <label class="radio"
+      >Ghost
+      <input
+        type="radio"
+        name="radioname"
+        id="Dark"
+        value="Ghost"
+      />
+    </label>
+    <label class="radio"
+      >Dragon
+      <input
+        type="radio"
+        name="radioname"
+        id="Dark"
+        value="Dragon"
+      />
+    </label>
+  </div>
+  <div class="querybox">
+    <input type="text" id="form" name="access" placeholder="Accessories" \ />
+    <input
+      type="number"
+      id="formNumber"
+      name="accessCount"
+      placeholder="Count"
+      \
+    />
+    <input type="submit" id="button" value="Search" />
+  </div>
+</form>
+<div class="cards">
+  {%for i in range(0,length)%}
+  <a href="/poke/{{content[i][0]}}">
+    <div class="card">
+      <img 
+        src="{{ url_for('static', filename='images/' + (content[i][0]) + '.png') }}" 
+        alt="Avatar"
+        class="image"
+      />
+      <div class="container">
+        <h4><b>Pokemon nr. {{content[i][0]}}</b></h4>
+        <p class="card-text">Name: {{content[i][1]}}</p>
+        <p class="card-text">Type: {{content[i][2]}}</p>
+        <p class="card-text">HP: {{content[i][3]}}</p>
+        <p class="card-text">Att: {{content[i][4]}}</p>
+        <p class="card-text">Def: {{content[i][5]}}</p>
+        <p class="card-text">Height: {{content[i][6]}}</p>
+        <p class="card-text">Weight: {{content[i][7]}}</p>
+      </div>
+    </div>
+  </a>
+  {%endfor%}
+</div>
+
+{% endblock content %}
