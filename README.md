@@ -36,3 +36,5 @@ IMPORTANT: In the 'Pokemon.SQL' change the directory to the full path of the 'po
 Ida Jing nhs371@alumni.ku.dk
 Nada Alhusein zcq910@alumni.ku.dk
 Jianpeng Zheng cfv939@alumni.ku.dk
+
+
